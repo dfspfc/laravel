@@ -19,7 +19,6 @@ services:
                 build: .
                 container_name: app
                 entrypoint: dockerize -template ./.docker/app/.env:.env -template ./.docker/nginx/nginx_template.conf:./.docker/nginx/nginx.conf -wait tcp://db:3306 -timeout 120s .docker/entrypoint.sh
-                #entrypoint: dockerize -wait tcp://db:3306 -timeout 120s .docker/entrypoint.sh
                 volumes:
                         - .:/var/www
                 networks:
